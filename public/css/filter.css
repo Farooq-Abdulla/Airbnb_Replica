@@ -1,0 +1,29 @@
+
+ #filters{
+    display: flex;
+    flex-wrap: wrap;
+        }
+.filter{
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+            
+}
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.filter p{
+    font-size: 0.8rem;
+}
+.filter button {
+    border: none !important;
+            
+            
+}
+.filter button i {
+    text-decoration: none !important;
+    background-color: white !important;
+}
+  

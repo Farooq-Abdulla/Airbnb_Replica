@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb_R</title>
+</head> -->
+
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    
+    <!-- <h1>All Listings</h1> -->
+    <!-- <form action="/listings/new" method="get">
+        <button>Create New Listing</button>
+    </form> -->
+
+    <!-- <style>
+        #filters{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter{
+            text-align: center;
+            margin-right: 2rem;
+            margin-top: 2rem;
+            opacity: 0.7;
+            
+        }
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .filter p{
+            font-size: 0.8rem;
+        }
+        .filter button {
+            border: none !important;
+            
+            
+        }
+        .filter button i {
+            text-decoration: none !important;
+            background-color: white !important;
+        }
+    </style> -->
+
+    <div id="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=City" method="post">
+            <button class="btnFilter"><div><i id="city" class="fa-solid fa-city"></i></div></button>
+            <p>Iconic cities</p>
+        </form>
+        
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Mountains" method="post">
+            <button class="btnFilter"><div><i class="fa-solid fa-mountain-sun"></i></div></button>
+            <p>Mountains </p>
+        </form>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Castles" method="post">
+            <button class="btnFilter"><div><i class="fa-brands fa-fort-awesome"></i></div></button>
+            <p>Castles </p>
+        </form>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Beaches" method="post">
+            <button class="btnFilter"><div><i class="fa-solid fa-person-swimming"></i></div></button>
+            <p>Beaches </p>
+        </form>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Camping" method="post">
+            <button class="btnFilter"><div><i class="fa-solid fa-campground"></i></div></button>
+            <p>Camping </p>
+        </form>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Farms" method="post">
+            <button class="btnFilter"><div><i class="fa-solid fa-cow"></i></div></button>
+            <p>Farms </p>
+        </form>
+        </div>
+        <div class="filter">
+            <form action="/listings/q?category=Arctic" method="post">
+                <button class="btnFilter"><div><i class="fa-regular fa-snowflake"></i></div></button>
+                <p>Arctic</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for ( let list of allListings){ %>
+            <a href="/listings/<%= list._id %>" class="listing-links">
+                <div class="card col listing-card" >
+                    <img src="<%=list.image.url%>" class="card-img-top" alt="listing img" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+
+                    <div class="card-body">
+                      <p class="card-text">
+                        <b><%= list.title %></b> <br>
+                        Price : &dollar;<%= list.price.toLocaleString("en-us") %>/night
+                    </p>
+                    </div>
+                  </div>
+            </a>
+            
+              <% } %>
+    </div>
+
+</body>
+
+<script>
+    let iconic=document.querySelector('#city');
+    iconic.addEventListener('click',()=>{
+    app.get('/listings',(req,res)=>{
+        res.send("Hello");
+    })
+});
+</script>
+<!-- </html> -->

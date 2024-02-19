@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb_R</title>
+</head> -->
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <h2>Add a NEW Listing</h2>
+    <br>
+    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title: </label>
+            <input class="form-control" type="text" name="listing[title]" id="title" placeholder="enter title" required><br>
+            <div class="valid-feedback">Title looks good</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description: </label><br>
+            <textarea class="form-control" name="listing[description]" id="description" cols="15" rows="2" placeholder="enter description" required></textarea><br>
+            <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+
+        <!-- <div class="mb-3">
+             <label class="form-label" for="image">Image Link: </label>
+            <input  class="form-control" name="listing[image]" id="image" placeholder="enter image URL" ><br>
+        </div> -->
+        <div class="mb-3">
+            <label class="form-label" for="image">Upload Image: </label>
+           <input  class="form-control" name="listing[image]" id="image" type="file" required><br>
+       </div>
+
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label class="form-label" for="price">Price: </label>
+                <input class="form-control"  name="listing[price]" id="price" placeholder=" enter price" required><br>
+                <div class="invalid-feedback">Please enter a valid feedback</div>
+            </div>
+            
+    
+            <div class="mb-3 col-md-8">
+                <label class="form-label" for="location">Location: </label>
+                <input class="form-control" type="text" name="listing[location]" id="location" placeholder="enter location" required><br>
+                <div class="invalid-feedback">Please enter a valid country name</div>
+
+            </div>
+        </div>
+        
+
+        
+        <div class="form-floating mb-3 ">
+            <select class="form-select" id="category" name="listing[category]" aria-label="Floating label select example">
+              <!-- <option selected>Choose</option> -->
+              <option selected value="Mountains">Mountains</option>
+              <option value="Arctic">Arctic</option>
+              <option value="Farms">Farms</option>
+              <option value="Castles">Castles</option>
+              <option value="Camping">Camping</option>
+              <option value="Beaches">Beaches</option>
+              <option value="City">Iconic City</option>
+            </select>
+            <label for="category">Category</label>
+          </div>
+
+        <div class="mb-3">
+            <label  class="form-label" for="country">Country: </label>
+            <input class="form-control" type="text" name="listing[country]" id="country" placeholder="enter country" required><br>
+        </div>
+        
+        <br>
+        <button class="btn btn-dark add-btn">ADD</button>
+        <br><br>
+    </form>
+</div>
+    </div>
+</body>
+<!-- </html> -->
