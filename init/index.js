@@ -7,6 +7,7 @@
 
 
     const initData= require('./data.js');
+    require('dotenv').config({ path: '../.env' });
 
 
 
